@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',  
-    'corsheaders',     
-    'authentication',  
-    'rest_framework_simplejwt', # added this line
+    'corsheaders',
+         
+    'authentication',  #log in handler app
+    'rest_framework_simplejwt', #tokenised log in 
+    
+    'products'#manage products backend app
 ]
 
 MIDDLEWARE = [

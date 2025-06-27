@@ -22,10 +22,10 @@ class UserManager(BaseUserManager):
             raise ValueError('Superuser must have is_superuser=True.')
             
         return self.create_user(email, password, **extra_fields)
-
+    
 class User(AbstractUser):
     ROLE_CHOICES = [('admin','Admin'),('user','User'),]
-    
+
     username = None  # Remove the username field
     email = models.EmailField(unique=True)
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='user')
