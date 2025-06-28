@@ -4,8 +4,11 @@ from .models import ProductCategory
 class ProductCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductCategory
-        fields = ['id', 'name', 'description', 'is_active']
+        fields = ['id', 'name', 'description', 'is_active', 'created_at', 'updated_at']
         read_only_fields = ['id', 'created_at', 'updated_at']
+        extra_kwargs = {
+            'description': {'required': False, 'allow_blank': True}
+        }
     
     def validate_name(self, value):
         """

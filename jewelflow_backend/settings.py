@@ -62,6 +62,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3001",
     "http://172.27.1.93:3001",
     "http://172.27.1.93:3000",
+    "http://172.27.9.94:3000/",
 ]
 
 CORS_ALLOW_CREDENTIALS = True

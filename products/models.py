@@ -4,9 +4,9 @@ from django.utils import timezone
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    description = models.TextField()
-    created_at = models.DateTimeField(default=timezone.now)
-    updated_at = models.DateTimeField(default=timezone.now)
+    description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
     
     class Meta:
@@ -15,4 +15,3 @@ class ProductCategory(models.Model):
         
     def __str__(self):
         return self.name
-        

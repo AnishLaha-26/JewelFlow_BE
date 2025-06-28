@@ -8,5 +8,7 @@ router.register(r'categories', views.ProductCategoryViewSet, basename='product-c
 
 # The API URLs are now determined automatically by the router
 urlpatterns = [
+    path('categories/bulk/', views.BulkDeleteCategoriesView.as_view(), name='bulk-delete-categories'),
     path('', include(router.urls)),
 ]
+
